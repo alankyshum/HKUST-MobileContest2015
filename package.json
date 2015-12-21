@@ -1,0 +1,24 @@
+{
+  "name": "mobilecontest2015_hkust",
+  "version": "1.0.0",
+  "description": "Landing Page for Mobile Contest 2015, HKUST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alankyshum/HKUST-MobileContest2015.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alankyshum/HKUST-MobileContest2015/issues"
+  },
+  "homepage": "https://github.com/alankyshum/HKUST-MobileContest2015#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1"
+  }
+}

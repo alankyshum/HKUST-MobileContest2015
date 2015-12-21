@@ -1,0 +1,27 @@
+{
+  "name": "HKUST-MobileContest2015",
+  "homepage": "https://github.com/alankyshum/HKUST-MobileContest2015",
+  "authors": [
+    "Alan Shum <alan_shum@outlook.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "director": "~1.2.8",
+    "font-awesome": "~4.5.0",
+    "dropzone": "~4.2.0",
+    "ViewerJS": "kogmbh/ViewerJS#~0.5.9"
+  }
+}

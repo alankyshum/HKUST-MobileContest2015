@@ -1,0 +1,250 @@
+/*
+	------------------
+	VARIABLES --------
+	------------------
+ */
+// VALUES
+$sidebarWidth: 15%;
+
+// COLOURS
+$bluePrimary: #2F74A1;
+$blueSecondary: #5D7B9C;
+$anchorPrimary: #1C8EDF;
+$white: #fff;
+
+/*
+	------------------
+	CSS --------------
+	------------------
+ */
+body {
+	display: flex;
+	flex-direction: row;
+	color: darken($white, 50%);
+	flex-wrap: wrap;
+}
+
+dl {
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
+	margin: auto;
+	margin-right: auto;
+	dt {
+		box-sizing: border-box;
+		width: 20%;
+		margin-top: 15px;
+		padding-right: 25px;
+		text-align: right;
+		font-weight: bold;
+		color: $blueSecondary;
+	}
+	dd {
+		width: 80%;
+		margin-top: 15px;
+	}
+}
+
+p {
+	margin-bottom: 10px;
+	text-align: justify;
+	text-indent: 4em;
+	line-height: 2em;
+	&.quote {
+		padding-top: 10px;
+		padding-right: 2em;
+		padding-bottom: 10px;
+		padding-left: 2em;
+		text-indent: 2em;
+		opacity: .5;
+		color: $bluePrimary;
+		border-left: 2px solid;
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
+hr {
+	opacity: .2;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+/*
+	SIDEBAR ---------------------
+ */
+#sidebar {
+	position: fixed;
+	width: $sidebarWidth;
+	height: 100vh;
+	padding: 50px 0 0 40px;
+	li {
+		margin-top: 1.5em;
+		list-style: none;
+		.fa-circle-o {
+			background-color: $white;
+		}
+		&.active {
+			margin-left: -1px;
+			transition: font-size .3s;
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+		a {
+			text-decoration: none;
+			color: $bluePrimary;
+		}
+	}
+	.sidebar_line {
+		position: absolute;
+		z-index: -1;
+		top: 80px;
+		left: 45px;
+		width: 2px;
+		height: 100%;
+		background-color: $bluePrimary;
+	}
+}
+section {
+	display: none;
+	overflow: auto;
+	width: calc(100% - #{$sidebarWidth});
+	height: 100vh;
+	margin-left: $sidebarWidth;
+	padding: 30px 50px 30px 30px;
+	&.shown {
+		display: block;
+	}
+	a {
+		text-decoration: none;
+		color: $anchorPrimary;
+		border-bottom: 1px dashed;
+		line-height: 1.5em;
+		&:hover {
+			border-bottom: 1px solid;
+		}
+	}
+	li {
+		margin: 10px 20px;
+		list-style: none;
+	}
+	.pageHeader {
+		text-transform: uppercase;
+		color: $bluePrimary;
+		font-size: 5em;
+		font-weight: normal;
+	}
+	h1.paragraphHeading {
+		margin-top: 1.5em;
+		color: $blueSecondary;
+	}
+	h2 {
+		color: $blueSecondary;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+/*
+	TIMELINE PAGE ----------------------
+ */
+.timeline_item {
+	position: relative;
+	display: flex;
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid darken($white, 10%);
+	border-radius: 5px;
+	&:hover {
+		.time,
+		.date {
+			opacity: 1;
+		}
+	}
+	.time {
+		margin-right: 15px;
+		padding-right: 15px;
+		transition: opacity .3s;
+		opacity: .7;
+		color: $bluePrimary;
+		border-right: 3px solid $bluePrimary;
+		font-size: 3em;
+	}
+	.date {
+		margin-right: 2em;
+		transition: opacity .3s;
+		opacity: .8;
+		color: $bluePrimary;
+		font-size: 2em;
+	}
+	.place {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		margin-right: 30px;
+		padding: 5px 10px;
+		color: $white;
+		border-radius: 5px;
+		background-color: $bluePrimary;
+	}
+	.eventName li {
+		margin-bottom: 15px;
+		list-style: none;
+		&:before {
+			margin-right: 15px;
+			content: '-';
+		}
+	}
+}
+
+/*
+	FAQ PAGE -------------------------
+ */
+.cardBox {
+	float: left;
+	box-sizing: border-box;
+	width: calc(50% - 30px);
+	margin: 10px 15px;
+	padding: 5px 30px 30px;
+	border: 1px solid darken($white, 10%);
+	border-radius: 5px;
+}
+
+
+/*
+	PROPOSAL PAGE --------------------
+ */
+label[for] {
+	font-weight: bold;
+	margin-left: 30px;
+}
+
+input {
+	border-radius: 3px;
+	border: 1px solid #545454;
+	padding: 5px;
+}
+
+input:focus {
+	border-color: #2F74A1;
+}
+
+button {
+	border-radius: 5px;
+	padding: 7px 13px;
+	background-color: #5D7B9C;
+	color: #fff;
+	border: none;
+	transition: background-color .3s;
+}
+
+button:hover, button:focus {
+	background-color: #2F74A1;
+}
+
+form {
+	margin-top: 1em;
+	&.dropzone {
+		border-radius: 15px;
+	}
+}
