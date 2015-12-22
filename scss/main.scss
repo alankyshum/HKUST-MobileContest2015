@@ -5,6 +5,8 @@
  */
 // VALUES
 $sidebarWidth: 15%;
+$sidebarWidth_lg: 17%;
+$sidebarWidth_md: 25%;
 
 // COLOURS
 $bluePrimary: #2F74A1;
@@ -41,7 +43,12 @@ dl {
 	}
 	dd {
 		width: 80%;
-		margin-top: 15px;
+		margin: 0;
+		line-height: 1.4em;
+		text-align: justify;
+		li {
+			margin-left: 0;
+		}
 	}
 }
 
@@ -81,6 +88,9 @@ hr {
 	li {
 		margin-top: 1.5em;
 		list-style: none;
+		.nav_text {
+			display: inline-block;
+		}
 		.fa-circle-o {
 			background-color: $white;
 		}
@@ -110,6 +120,7 @@ section {
 	overflow: auto;
 	width: calc(100% - #{$sidebarWidth});
 	height: 100vh;
+	box-sizing: border-box;
 	margin-left: $sidebarWidth;
 	padding: 30px 50px 30px 30px;
 	&.shown {
@@ -246,5 +257,61 @@ form {
 	margin-top: 1em;
 	&.dropzone {
 		border-radius: 15px;
+	}
+}
+
+
+/**
+ * MEDIA QUERY
+ * -------------
+ */
+@media screen and (max-width: 1200px) {
+	#sidebar {
+		width: $sidebarWidth_lg;
+	}
+	section {
+		width: calc(100% - #{$sidebarWidth_lg});
+		margin-left: $sidebarWidth_lg;
+		padding-left: 50px;
+	}
+	.cardBox {
+		width: calc(100% - 30px);
+	}
+}
+@media screen and (max-width: 1080px) {
+	#sidebar {
+		width: $sidebarWidth_md;
+	}
+	section {
+		width: calc(100% - #{$sidebarWidth_md});
+		margin-left: $sidebarWidth_md;
+		padding-left: 50px;
+		.pageHeader {
+			font-size: 3em;
+		}
+	}
+	h1 {
+		font-size: 1.5em;
+	}
+	dl {
+		width: 100%;
+		dt {
+			width: 100%;
+			margin-top: 2em;
+			text-align: left;
+		}
+		dd {
+			width: 100%;
+			text-indent: 2em;
+		}
+	}
+	p.quote {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.sidebar_line {
+		display: none;
 	}
 }
