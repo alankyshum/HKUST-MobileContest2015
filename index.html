@@ -18,18 +18,65 @@
 	</head>
 	<body>
 
+		<!-- FACEBOOK PAGE PLUGIN -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=1478405775799611";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+
 		<!-- SIDEBAR -->
 		<aside id='sidebar'>
 			<ul>
-				<li data-page='home'><a href="#/home"><i class='fa fa-circle-o'></i> Home</a></li>
-				<li data-page='timeline'><a href="#/home/timeline"><i class='fa fa-circle-o'></i> Timeline</a></li>
-				<li data-page='event'><a href="#/home/event"><i class='fa fa-circle-o'></i> Event Details</a></li>
+				<li data-page='news' class='active'><a href="#/news"><i class='fa fa-circle-o'></i> News</a></li>
+				<li data-page='event'><a href="#/event"><i class='fa fa-circle-o'></i> Event Details</a></li>
 				<li data-page='guides'><a href="#/guides"><i class='fa fa-circle-o'></i> Guides/ Rules</a></li>
 				<li data-page='proposal'><a href="#/proposal"><i class='fa fa-circle-o'></i> Proposal Upload</a></li>
 				<li data-page='tutorial'><a href="#/tutorial"><i class='fa fa-circle-o'></i> Tutorials</a></li>
 				<li data-page='faq'><a href="#/faq"><i class='fa fa-circle-o'></i> FAQs</a></li>
 			</ul>
 			<div class='sidebar_line'></div>
+			<div class="contacts">
+
+				<div class="person">
+					<span class='name'>Mr. Luke Lo</span>
+					<span class='office'>Room 4209</span>
+					<span class='email'><i class='fa fa-envelope'></i> <a href="mailto:ustac@cse.ust.hk">ustac</a></span>
+				</div>
+
+				<div class="person">
+					<span class='name'>Prof. Jogesh K. Muppala</span>
+					<span class='office'>Room 3510</span>
+					<span class='email'><i class='fa fa-envelope'></i> <a href="mailto:muppala@cse.ust.hk">muppala</a></span>
+					<span class='website'><i class='fa fa-home'></i> <a href="http://www.cse.ust.hk/~muppala">/~muppala</a></span>
+					<span class='facebook'><i class='fa fa-facebook-square'></i><a href="http://www.facebook.com/profile.php?id=729855122"> fb.com/jmuppala</a></span>
+				</div>
+
+				<div class="person">
+					<span class='name'>Prof. Shing-Chi Cheung</span>
+					<span class='office'>Room 3543</span>
+					<span class='email'><i class='fa fa-envelope'></i> <a href="mailto:scc@cse.ust.hk">scc</a></span>
+					<span class='website'><i class='fa fa-home'></i> <a href="http://www.cse.ust.hk/~scc">/~scc</a></span>
+				</div>
+
+			</div>
+
+			<div class="fb-like" data-href="https://www.facebook.com/HKUST-Mobile-Application-Design-MAD-Contest-2015-1643664245891457/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+			<p class='buttonCaption'>
+				HKUST Mobile Application Design - MAD Contest 2015
+			</p>
+
+			<div class="copyright">
+				<div id='logo-ust'></div>
+				<div id='logo-cse'></div>
+				<p class='text'>
+					© Copyright 2015-2016 Department of Computer Science and Engineering, The Hong Kong University of Science and Technology
+				</p>
+			</div>
 		</aside>
 
 
@@ -41,11 +88,11 @@
 /_/ |_/_____/  |__/|__//____/  /_/   /_/  |_\____/_____/
 -->
 
-		<section id='timeline'>
+		<section id='news' class='shown'>
 
-			<h1 class='pageHeader'>Timeline</h1>
+			<h1 class='pageHeader'>News</h1>
 
-			<article class="timeline_item">
+			<article class="news_item">
 				<span class='time'>1700-1750</span> <span class='date'>25/11/2015 (Wed)</span>
 				<span class='place'>Rm.1511 (Lift 27/28)</span>
 				<ul class='eventName'>
@@ -53,7 +100,7 @@
 				</ul>
 			</article>
 
-			<article class="timeline_item">
+			<article class="news_item">
 				<span class='date'>16/11/2015</span>
 				<ul class='eventName'>
 					<li>Registration and proposal deadline have been extended (highlighted in Red) <a href="#/home/event">details</a></li>
@@ -61,7 +108,7 @@
 				</ul>
 			</article>
 
-			<article class="timeline_item">
+			<article class="news_item">
 				<span class='date'>19/11/2015</span>
 				<ul class='eventName'>
 					<li>UST MAD Contest Rules <a href="https://www.cse.ust.hk/ustac/2015/document/USTMADGameRules2015.pdf"></a>posted</li>
@@ -153,13 +200,13 @@
 				<dd>Your proposal should be less than or equal to 2MB in size. Please contact us for submissions larger than 2MB.</dd>
 
 				<dt>File Format</dt>
-				<dd>Your proposal must be in either the MS Winword or the Adobe PDF format, with extension being "doc", or "docx", or "pdf".</dd>
+				<dd>Your proposal must be in either the MS Winword or the Adobe PDF format, with extension being <code>doc</code>, or <code>docx</code>, or <code>pdf</code>.</dd>
 
 				<dt>Others</dt>
 				<dd>
 					<ul>
 						<li>You can submit your 2-page proposal for as many times as you want on or before the deadline. Only the last submission will be evaluated.</li>
-						<li>Should you require any <strong>special equipment</strong> (phone docks for example) for the program demonstration, you need to contact us at ustac@cse.ust.hk first, we need to evaluate to see whether we could support it.</li>
+						<li>Should you require any <strong>special equipment</strong> (phone docks for example) for the program demonstration, you need to contact us at <a href="mailto:ustac@cse.ust.hk">ustac@cse.ust.hk</a> first, we need to evaluate to see whether we could support it.</li>
 					</ul>
 				</dd>
 
@@ -167,21 +214,28 @@
 
 			<hr>
 
-			<form action="https://ustac.cse.ust.hk/upload.php" method="post" enctype="multipart/form-data">
+			<form id='proposalForm' action="https://ustac.cse.ust.hk/upload.php" method="post" enctype="multipart/form-data">
 
-				<label for="groupNumber">Group number <small>(your assigned number)</small>:</label>
-				<input id='groupNumber' type="number" min=0 name="groupNumber">
+				<p>
+					<label for="group">Group number <small>(your assigned number)</small>:</label>
+					<input id='group' type="number" min=0 max=9999 name="group">
+				</p>
+				<p>
+					<label for="pass">Password <small>(8-character password)</small>:</label>
+					<input id='pass' type="password" name="pass">
+				</p>
+				<p>
+					<label for="file">Upload <small>(< 2MB)</small>:</label>
+					<input id='file' type="file" name="file">
+				</p>
 
-				<label for="password">Password <small>(8-character password)</small>:</label>
-				<input id='password' type="password" name="password">
-
-				<button type="submit" onclick=''>
-				  Submit
-				</button>
+				<p>
+					<button type="submit">
+						Submit
+					</button>
+				</p>
 
 			</form>
-
-			<form action="/file-upload" class="dropzone" id="proposalUpload"></form>
 
 		</section>
 
@@ -319,8 +373,6 @@
 
 		</section>
 
-
-		<footer>HKUST LOGO HERE</footer>
 
 		<!-- NON-CRITICAL JS -->
 		<script src="bower_components/dropzone/dist/min/dropzone.min.js" charset="utf-8"></script>

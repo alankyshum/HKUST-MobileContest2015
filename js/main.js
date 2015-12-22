@@ -21,21 +21,17 @@ var activePage = (page) => {
  */
 
 // CONTROLLER: HOME PAGE
-var homeCtrl = (section) => {
+var newsCtrl = (section) => {
 	clearPage();
-	if (section == 'timeline') {
-		activePage('timeline');
-		document.getElementById('timeline').classList.add('shown');
-	} else if (section == 'event') {
-		activePage('event');
-		document.getElementById('event').classList.add('shown');
+	activePage('news');
+	document.getElementById('news').classList.add('shown');
+}
 
-	} else {
-		activePage('home');
-		document.getElementById('event').classList.add('shown');
-		document.getElementById('timeline').classList.add('shown');
-
-	}
+// CONTROLLER: EVENT PAGE
+var eventCtrl = () => {
+	clearPage();
+	activePage('event');
+	document.getElementById('event').classList.add('shown');
 }
 
 // CONTROLLER: GUIDELINE PAGE
@@ -80,8 +76,8 @@ var faqCtrl = () => {
  * ----------------------------
  */
 var routes = {
-	'/home': homeCtrl,
-	'/home/:section': homeCtrl,
+	'/news': newsCtrl,
+	'/event': eventCtrl,
 	'/guides': guideCtrl,
 	'/proposal': proposalCtrl,
 	'/tutorial': tutorialCtrl,
