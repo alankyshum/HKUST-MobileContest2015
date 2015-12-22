@@ -8,10 +8,9 @@
 		<meta name="name" content="content">
 
 		<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-		<link rel="stylesheet" href="bower_components/dropzone/dist/min/dropzone.min.css">
-		<link rel="stylesheet" href="bower_components/ViewerJS/viewer.css" charset="utf-8">
 		<link rel="stylesheet" href="css/main.css" charset="utf-8">
 		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" charset="utf-8">
+		<link rel="stylesheet" href="bower_components/animate.css/animate.min.css" charset="utf-8">
 
 		<!-- COMPULSORY SCRIPTS -->
 		<script src="bower_components/director/build/director.min.js" charset="utf-8"></script>
@@ -30,14 +29,19 @@
 
 
 		<!-- SIDEBAR -->
+		<div id="brand">
+			<em>M</em>obile <em>A</em>pplication <em>D</em>esign Contest <em>2015</em>
+		</div>
+
 		<aside id='sidebar'>
+
 			<ul>
-				<li data-page='news' class='active'><a href="#/news"><i class='fa fa-circle-o'></i> News</a></li>
-				<li data-page='event'><a href="#/event"><i class='fa fa-circle-o'></i> Event Details</a></li>
-				<li data-page='guides'><a href="#/guides"><i class='fa fa-circle-o'></i> Guides/ Rules</a></li>
-				<li data-page='proposal'><a href="#/proposal"><i class='fa fa-circle-o'></i> Proposal Upload</a></li>
-				<li data-page='tutorial'><a href="#/tutorial"><i class='fa fa-circle-o'></i> Tutorials</a></li>
-				<li data-page='faq'><a href="#/faq"><i class='fa fa-circle-o'></i> FAQs</a></li>
+				<li data-page='news' class='active animated fadeIn'><a href="#/news"><i class='fa fa-circle-o'></i> News</a></li>
+				<li data-page='event' class='animated fadeIn'><a href="#/event"><i class='fa fa-circle-o'></i> Event Details</a></li>
+				<li data-page='guides' class='animated fadeIn'><a href="#/guides"><i class='fa fa-circle-o'></i> Guides/ Rules</a></li>
+				<li data-page='proposal' class='animated fadeIn'><a href="#/proposal"><i class='fa fa-circle-o'></i> Proposal Upload</a></li>
+				<li data-page='tutorial' class='animated fadeIn'><a href="#/tutorial"><i class='fa fa-circle-o'></i> Tutorials</a></li>
+				<li data-page='faq' class='animated fadeIn'><a href="#/faq"><i class='fa fa-circle-o'></i> FAQs</a></li>
 			</ul>
 			<div class='sidebar_line'></div>
 			<div class="contacts">
@@ -88,13 +92,15 @@
 /_/ |_/_____/  |__/|__//____/  /_/   /_/  |_\____/_____/
 -->
 
-		<section id='news' class='shown'>
+		<section id='news' class='shown animated fadeIn'>
 
 			<h1 class='pageHeader'>News</h1>
 
 			<article class="news_item">
-				<span class='time'>1700-1750</span> <span class='date'>25/11/2015 (Wed)</span>
-				<span class='place'>Rm.1511 (Lift 27/28)</span>
+				<div class="info">
+					<span class='time'>1700-1750</span> <span class='date'>25/11/2015 (Wed)</span>
+					<p class='place'>Rm.1511 (Lift 27/28)</p>
+				</div>
 				<ul class='eventName'>
 					<li>Info. session</li>
 				</ul>
@@ -128,7 +134,7 @@
 /_____/  |___/_____/_/ |_/ /_/    /_/   /_/  |_\____/_____/
 -->
 
-		<section id='event'>
+		<section id='event' class='animated fadeIn'>
 
 			<h1 class='pageHeader'>Event Details</h1>
 
@@ -179,7 +185,7 @@
 /_/   /_/ |_|\____/_/    \____//____/_/  |_/_____/  /_/   /_/  |_\____/_____/
 -->
 
-		<section id='proposal'>
+		<section id='proposal' class='animated fadeIn'>
 
 			<h1 class='pageHeader'>PROPOSAL</h1>
 
@@ -248,22 +254,28 @@
 \____/\____/___/_____/_____//____/  /_/   /_/  |_\____/_____/
 -->
 
-		<section id='guides'>
+		<section id='guides' class='animated fadeIn'>
 
 			<h1 class='pageHeader'>Guides/ Rules</h1>
 
 			<h1 class='paragraphHeading'>Game Rules</h1>
-			<a href="http://www.cse.ust.hk/ViewerJS/#ustac/2015/document/USTMADGameRules2015.pdf"></a>
+			<object data="assets/USTMADGameRules2015.pdf" type="application/pdf" width="100%" height="700">
+				<embed src="assets/USTMADGameRules2015.pdf" alt="USTMADGameRules2015">
+				<a href="assets/USTMADGameRules2015.pdf">Download USTMADGameRules2015</a>
+			</object>
 
 			<h1 class='paragraphHeading'>Proposal Guidelines</h1>
-			<a href="http://www.cse.ust.hk/ViewerJS/#ustac/2015/document/USTMADProposalGuideline2015.pdf"></a>
+			<object data="assets/USTMADProposalGuideline2015.pdf" width="100%" height="700">
+				<embed src="assets/USTMADProposalGuideline2015.pdf" alt="USTMADProposalGuideline2015">
+				<a href="assets/USTMADProposalGuideline2015.pdf">Download USTMADProposalGuideline2015</a>
+			</object>
 		</section>
 
 
 		<!-- SECTRION::TUTORIAL -->
-		<section id='tutorial'>
+		<section id='tutorial' class='animated fadeIn'>
 
-			<h2 class='pageHeader'>Tutorials</h2>
+			<h1 class='pageHeader'>Tutorials</h1>
 			<p class='quote'>
 				This page contains a list of free APIs, online references, tutorials categorized by topics. They are optional, but they are useful to help you further extend the knowledge regarding Android.
 			</p>
@@ -332,7 +344,7 @@
 /_/   /_/  |_\___\_\  /_/   /_/  |_\____/_____/
 -->
 
-		<section id='faq'>
+		<section id='faq' class='animated fadeIn'>
 
 			<h1 class='pageHeader'>FAQ</h1>
 
@@ -375,8 +387,6 @@
 
 
 		<!-- NON-CRITICAL JS -->
-		<script src="bower_components/dropzone/dist/min/dropzone.min.js" charset="utf-8"></script>
-		<script src="bower_components/ViewerJS/viewer.js" charset="utf-8"></script>
 		<script src="js/main.js" charset="utf-8"></script>
 
 
