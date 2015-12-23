@@ -2,6 +2,7 @@
  * HELPER FUNCTIONS
  * ----------------
  */
+
 var clearPage = () => {
 	Object.keys(document.getElementsByClassName('shown')).forEach((i) => {
 		if (document.getElementsByClassName('shown')[i]) {
@@ -9,9 +10,27 @@ var clearPage = () => {
 		}
 	});
 }
+
 var activePage = (page) => {
 	if (document.querySelector(`[data-page].active`)) document.querySelector(`[data-page].active`).classList.remove('active');
 	document.querySelector(`[data-page="${page}"]`).classList.add('active');
+}
+
+var showMenu = () => {
+	'use strict'
+	if (window.innerWidth >= 800) return false;
+	let display = document.getElementById('sidebar').style.display;
+	if (display !== 'block') {
+		document.getElementById('sidebar').style.display = "block";
+	} else {
+		if (~[...document.getElementById('sidebar').classList].indexOf('slideInLeft')) {
+			document.getElementById('sidebar').classList.remove('slideInLeft');
+			document.getElementById('sidebar').classList.add('slideOutLeft');
+		} else {
+			document.getElementById('sidebar').classList.remove('slideOutLeft');
+			document.getElementById('sidebar').classList.add('slideInLeft');
+		}
+	}
 }
 
 
@@ -85,3 +104,21 @@ var routes = {
 };
 var router = Router(routes);
 router.init();
+
+
+/**
+ * DELAYED LOADING
+ */
+setTimeout(() => {
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=1478405775799611";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+}, 1500);
+
+document.getElementsByClassName('section').onclick = () => {
+	console.log("ASD");
+};
