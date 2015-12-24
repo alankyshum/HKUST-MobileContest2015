@@ -5,7 +5,13 @@
 		<meta name="keywords" content="Mobile Application Development">
 		<meta name="description" content="HKUST Mobile Application Design Contest">
 		<title>HKUST Mobile Application Design Contest 2015</title>
-		<meta name="name" content="content">
+		<meta name="keywords" content="HKUST, Mobile Application">
+		<meta name="description" content="HKUST Mobile Application Design Contest held in 2015">
+		<meta name="og:title" content="HKUST Mobile Application Design Contest 2015">
+		<meta name="og:type" content="event">
+		<meta name="og:url" content="https://www.cse.ust.hk/ustac/2015">
+		<meta name="og:site_name" content="HKUST - CSE">
+
 
 		<link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
 		<link rel="stylesheet" href="css/main.css" charset="utf-8">
@@ -22,12 +28,15 @@
 
 
 		<!-- SIDEBAR -->
-		<div id="brand" class='animated slideInDown' onclick="showMenu()">
+		<label id="brand" class='animated slideInDown' for='sidebarTrigger'>
 			<div class="logo"></div>
 			<em>M</em>obile <em>A</em>pplication <em>D</em>esign Contest <em>2015</em>
-		</div>
+		</label>
 
-		<aside id='sidebar' class='animated slideInLeft'>
+		<!-- trigger must stick with sidebar -->
+		<input id='sidebarTrigger' type="checkbox" checked=false>
+		<aside id='sidebar'>
+			<div class='sidebar_line animated slideInDown'></div>
 
 			<ul>
 				<li data-page='news' class='active animated fadeIn'><a href="#/news"><i class='fa fa-circle-o'></i> News</a></li>
@@ -37,7 +46,6 @@
 				<li data-page='tutorial' class='animated fadeIn'><a href="#/tutorial"><i class='fa fa-circle-o'></i> Tutorials</a></li>
 				<li data-page='faq' class='animated fadeIn'><a href="#/faq"><i class='fa fa-circle-o'></i> FAQs</a></li>
 			</ul>
-			<div class='sidebar_line'></div>
 			<div class="contacts">
 
 				<div class="person">

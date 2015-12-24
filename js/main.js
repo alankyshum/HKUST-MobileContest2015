@@ -16,23 +16,6 @@ var activePage = (page) => {
 	document.querySelector(`[data-page="${page}"]`).classList.add('active');
 }
 
-var showMenu = () => {
-	'use strict'
-	if (window.innerWidth >= 800) return false;
-	let display = document.getElementById('sidebar').style.display;
-	if (display !== 'block') {
-		document.getElementById('sidebar').style.display = "block";
-	} else {
-		if (~[...document.getElementById('sidebar').classList].indexOf('slideInLeft')) {
-			document.getElementById('sidebar').classList.remove('slideInLeft');
-			document.getElementById('sidebar').classList.add('slideOutLeft');
-		} else {
-			document.getElementById('sidebar').classList.remove('slideOutLeft');
-			document.getElementById('sidebar').classList.add('slideInLeft');
-		}
-	}
-}
-
 
 /**
  * CONTROLLERS FOR DIFFERENT ROUTES
@@ -118,7 +101,3 @@ setTimeout(() => {
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 }, 1500);
-
-document.getElementsByClassName('section').onclick = () => {
-	console.log("ASD");
-};

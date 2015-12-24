@@ -127,14 +127,26 @@ hr {
 		font-style: normal;
 	}
 }
+#sidebarTrigger {
+	display: none;
+}
 #sidebar {
 	position: fixed;
-	display: block;
 	overflow-y: auto;
 	box-sizing: border-box;
 	width: $sidebarWidth;
 	height: 100vh;
 	padding: 50px 0 30px 40px;
+	.sidebar_line {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 45px;
+		width: 2px;
+		height: 100vh;
+		background-color: $bluePrimary;
+		animation-delay: 1s;
+	}
 	ul {
 		margin-top: 50px;
 		margin-left: -40px;
@@ -158,15 +170,6 @@ hr {
 			text-decoration: none;
 			color: $bluePrimary;
 		}
-	}
-	.sidebar_line {
-		position: fixed;
-		z-index: -1;
-		top: 0;
-		left: 45px;
-		width: 2px;
-		height: 100vh;
-		background-color: $bluePrimary;
 	}
 	.contacts {
 		width: 75%;
@@ -438,6 +441,9 @@ form {
 @media screen and (max-width: 1080px) {
 	#sidebar {
 		width: $sidebarWidth_md;
+		.sidebar_line {
+			display: none;
+		}
 	}
 	section {
 		width: calc(100% - #{$sidebarWidth_md});
@@ -468,9 +474,6 @@ form {
 }
 @media screen and (max-width: 900px) {
 	#sidebar {
-		.sidebar_line {
-			display: none;
-		}
 		.contacts,
 		.buttonCaption,
 		.fb-like,
@@ -487,8 +490,15 @@ form {
 		box-shadow: 0px 1px 10px darken($white, 50);
 		cursor: pointer;
 	}
+	#sidebarTrigger {
+		+ #sidebar {
+			animation: slideOutLeft .5s forwards;
+		}
+		&:checked + #sidebar {
+			animation: slideInLeft .5s forwards;
+		}
+	}
 	#sidebar {
-		display: none;
 		position: absolute;
 		width: $sidebarWidth_sm;
 		min-width: 270px;
